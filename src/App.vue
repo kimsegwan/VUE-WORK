@@ -4,7 +4,7 @@
     <router-view/>
     <div v-for="item in list" :key="item.key">
       {{ item.value }}
-    </div>
+    </div>    
   </div>
 </template>
 
