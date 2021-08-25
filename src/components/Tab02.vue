@@ -1,20 +1,21 @@
 <template>
-    <div class="contents-tab01">
-        Tab01
+    <div class="contents-tab02">
+		Tab02
     </div>
 </template>
 
 <script>
 export default ({
-    name: 'Tab01'
+	name: 'Tab02'    
 })
 </script>
 
 <style>
-.contents-tab01 {
+.contents-tab02 {
     padding:10px;
-    background-color: #aaa;
+    background-color: #a9d;
     width: 100%;
     height: 100%;
+    margin: 0 auto;
 }
 </style>
