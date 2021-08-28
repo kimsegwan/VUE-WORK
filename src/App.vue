@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Top/>
     <div class="slide-menu-bar" id="slide-menu-bar">
 			<ul class="slide-menu-box">
     		<li v-for="item in menuList" :key="item.no" @click="menuChange(item.no)">
@@ -28,7 +29,7 @@
 <script>
 import Tab01 from './components/Tab01.vue'
 import Tab02 from './components/Tab02.vue'
-
+import Top from './components/Top.vue'
 export default {
   name: 'App',
   data () {
@@ -56,7 +57,7 @@ export default {
     }
   },
   components: {
-    Tab01, Tab02
+    Tab01, Tab02, Top
   }
 }
 </script>
@@ -69,6 +70,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   overflow: hidden;
+  background-image: url('./assets/main_back.jpg');
 }
 
 .slide-menu-bar {
