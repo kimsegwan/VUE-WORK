@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <Top/>
-    <div class="slide-menu-bar" id="slide-menu-bar">
-			<ul class="slide-menu-box">
-    		<li v-for="item in menuList" :key="item.no" @click="menuChange(item.no)">
-      		{{ item.menuName }}
-    		</li>
-      </ul>
-      <div class="menu_slide_btn" @click="menuSlideSizing()" @mouseover="menuSlideSizing()"></div>
-    </div>
-    <div>
+    <div class="app-content">
+      <Top/>
+      <div class="slide-menu-bar" id="slide-menu-bar">
+        <ul class="slide-menu-box">
+          <li v-for="item in menuList" :key="item.no" @click="menuChange(item.no)">
+            {{ item.menuName }}
+          </li>
+        </ul>
+        <div class="menu_slide_btn" @click="menuSlideSizing()" @mouseover="menuSlideSizing()"></div>
+      </div>
+      <div>
 
+      </div>
+      <!-- <img src="./assets/logo.png"> -->
+      <!-- <router-view/> -->
+      <ul class="menu-box">
+        <li v-for="item in menuList" :key="item.no" @click="menuChange(item.no)">
+          {{ item.menuName }}
+        </li>
+      </ul>
+      <div class="contents-box">
+        <Tab01 v-if="menuNo == 1"></Tab01>
+        <Tab02 v-if="menuNo == 2"></Tab02>
+      </div>
     </div>
-    <!-- <img src="./assets/logo.png"> -->
-    <!-- <router-view/> -->
-    <ul class="menu-box">
-    	<li v-for="item in menuList" :key="item.no" @click="menuChange(item.no)">
-      	{{ item.menuName }}
-    	</li>
-    </ul>
-  <div class="contents-box">
-    <Tab01 v-if="menuNo == 1"></Tab01>
-    <Tab02 v-if="menuNo == 2"></Tab02>
-  </div>
   </div>
 </template>
 
@@ -70,7 +72,25 @@ export default {
   text-align: center;
   color: #2c3e50;
   overflow: hidden;
+  position: relative;
+  font-family: "맑은 고딕";
+}
+
+#app::before {
+  content: '';
   background-image: url('./assets/main_back.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  opacity: .7;
+}
+
+.app-content{
+  position:relative;
 }
 
 .slide-menu-bar {

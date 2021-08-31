@@ -24,6 +24,15 @@ export default({
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+@font-face {
+    font-family: 'GowunDodum-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}                                                                                                                                                                                                                                                                                
+
 .top-menu-list {
 	margin-top: 15px;
     overflow: hidden;
@@ -32,7 +41,7 @@ export default({
 .top-menu-box {
 	overflow: hidden;
     float: right;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #444;
     opacity: .8;
 }
 
@@ -43,12 +52,12 @@ export default({
     padding: 5px 0px;
     cursor: pointer;
     font-weight: bold;
+    font-family: 'Nanum Myeongjo', serif;
 }
 
 .top-menu-box li:hover {
-    /* background-color: rgb(236, 241, 227); */
     border-radius: 5px;
-    line-height: 18px;
+    line-height: 12px;
 }
 
 .top-menu-box li:last-child {
