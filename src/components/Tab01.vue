@@ -13,8 +13,7 @@ export default ({
 <style>
 .contents-tab01 {
     padding:10px;
-    background-color: #aaa;
     width: 100%;
-    height: 100%;
+    height: 500px;
 }
 </style>

@@ -1,29 +1,9 @@
 <template>
   <div id="app">
     <div class="app-content">
-      <Top/>
-      <div class="slide-menu-bar" id="slide-menu-bar">
-        <ul class="slide-menu-box">
-          <li v-for="item in menuList" :key="item.no" @click="menuChange(item.no)">
-            {{ item.menuName }}
-          </li>
-        </ul>
-        <div class="menu_slide_btn" @click="menuSlideSizing()" @mouseover="menuSlideSizing()"></div>
-      </div>
-      <div>
-
-      </div>
+      <Top v-on:menuText="menuText"/>
       <!-- <img src="./assets/logo.png"> -->
-      <!-- <router-view/> -->
-      <ul class="menu-box">
-        <li v-for="item in menuList" :key="item.no" @click="menuChange(item.no)">
-          {{ item.menuName }}
-        </li>
-      </ul>
-      <div class="contents-box">
-        <Tab01 v-if="menuNo == 1"></Tab01>
-        <Tab02 v-if="menuNo == 2"></Tab02>
-      </div>
+      <router-view/>
     </div>
   </div>
 </template>
@@ -32,30 +12,26 @@
 import Tab01 from './components/Tab01.vue'
 import Tab02 from './components/Tab02.vue'
 import Top from './components/Top.vue'
+
+var routes = [
+  {path: '/menu01', components: Tab01},
+  {path: '/menu02', components: Tab02}
+]
+
+var router = new VueRouter({
+  routes
+})
+
 export default {
   name: 'App',
   data () {
     return {
-      menuList: [{no:1,menuName:'개요'}
-      					,{no:2,menuName:'여행'}
-                ,{no:3,menuName:'추억'}],
-      menuNo : 1,
-      menuSlide: true
+
     }
   },
   methods: {
-    menuChange : function(no) {
-			this.menuNo = no
-    },
-    menuSlideSizing: function() {
-      const obj = document.getElementById("slide-menu-bar")
-      console.log('wlsdlq')
-      if(this.menuSlide) {
-				obj.style.width="10px"
-      } else {
-        obj.style.width="90%"
-      }
-			this.menuSlide = !this.menuSlide
+    menuText : function(text) {
+      alert(text)
     }
   },
   components: {

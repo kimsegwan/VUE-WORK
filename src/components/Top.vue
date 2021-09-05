@@ -1,10 +1,15 @@
 <template>
     <div class="top-menu-list">
-		<ul class="top-menu-box">
-			<li v-for="menu in menuList" :key="menu.no">
+		<!-- <ul class="top-menu-box">
+			<li v-for="menu in menuList" :key="menu.no" @click="menuAlt(menu.name)">
                 {{menu.name}}
             </li>
-        </ul>
+        </ul> -->
+        <div class="top-menu-box">
+            <router-link to="" v-for="menu in menuList" :key="menu.no" class="top-menu">
+                {{menu.name}}
+            </router-link>
+        </div>
     </div>
 </template>
 
@@ -12,12 +17,18 @@
 
 export default({
     name: 'Top',
+    props : ['propsdata'],
     data() {
         return {
             menuList: [{no: 1, name: '소개'},
             			{no: 2, name: '여행지'},
                         {no: 3, name: '음식점'},
                         {no: 4, name: '계획'}]
+        }
+    },
+    methods : {
+        menuAlt : function(text) {
+            this.$emit('menuText', text)
         }
     }
 })
@@ -62,5 +73,22 @@ export default({
 
 .top-menu-box li:last-child {
     margin-right: 10px;
+}
+
+.top-menu {
+    padding: 15px;
+    text-decoration: none;
+	float: left;
+    width: 70px;
+    padding: 5px 0px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Nanum Myeongjo', serif;
+    color: #333;
+}
+
+.top-menu:hover {
+    border-radius: 5px;
+    line-height: 12px;
 }
 </style>
