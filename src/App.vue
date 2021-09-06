@@ -57,8 +57,9 @@ export default {
 
 #app::before {
   content: '';
-  background-image: url('./assets/tab02_back.jpg');
-  background-size: cover;
+  background-image: url('./assets/main_back.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   display: block;
