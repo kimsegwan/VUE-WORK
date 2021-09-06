@@ -7,8 +7,14 @@
         <br/>
         <h1>소개</h1>
         <button @click="getData">데이터 수신</button>
-        <br/>
-        <span>{{ apiText }}</span>
+        <div>
+            <table>
+                <tr v-for="(val, idx) in result" :key="idx">
+                    <td>{{ idx }}</td>
+                    <td>{{ val }}</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </template>
 
@@ -19,16 +25,15 @@ export default ({
     name: 'Tab01',
     data() {
         return {
-            apiText: []
+            result: null
         }
     },
     methods: {
         getData: function() {
             axios.get('https://raw.githubusercontent.com/joshua1988/doit-vuejs/master/data/demo.json')
-							.then(function(response) {
-                                const text= response
-                                console.log(text)
-								this.apiText= text
+							.then((response) => {
+                                console.log(response)
+								this.result = response.data
 							}).catch(error => {
                                 alert(error)
                             })
