@@ -6,7 +6,7 @@
             </li>
         </ul> -->
         <div class="top-menu-box">
-            <router-link to="" v-for="menu in menuList" :key="menu.no" class="top-menu">
+            <router-link :to="menu.link" v-for="menu in menuList" :key="menu.no" class="top-menu" @click="menuAlt(menu.name)">
                 {{menu.name}}
             </router-link>
         </div>
@@ -20,10 +20,10 @@ export default({
     props : ['propsdata'],
     data() {
         return {
-            menuList: [{no: 1, name: '소개'},
-            			{no: 2, name: '여행지'},
-                        {no: 3, name: '음식점'},
-                        {no: 4, name: '계획'}]
+            menuList: [{no: 1, name: '소개', link: '/menu01'},
+            			{no: 2, name: '여행지', link: '/menu02'},
+                        {no: 3, name: '음식점', link: '/menu03'},
+                        {no: 4, name: '계획', link: '/menu04'}]
         }
     },
     methods : {

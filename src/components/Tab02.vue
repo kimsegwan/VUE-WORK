@@ -1,6 +1,11 @@
 <template>
     <div class="contents-tab02">
 		Tab02
+    <br/>
+        <br/>
+        <br/>
+        <br/>
+        <h1>여행지</h1>
     </div>
 </template>
 
@@ -13,9 +18,7 @@ export default ({
 <style>
 .contents-tab02 {
     padding:10px;
-    background-color: #a9d;
     width: 100%;
-    height: 100%;
-    margin: 0 auto;
+    height: 1000px;
 }
 </style>
