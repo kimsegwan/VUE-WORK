@@ -20,7 +20,7 @@ export default({
     props : ['propsdata'],
     data() {
         return {
-            menuList: [{no: 1, name: '소개', link: '/menu01'},
+            menuList: [{no: 1, name: '소개', link: '/'},
             			{no: 2, name: '여행지', link: '/menu02'},
                         {no: 3, name: '음식점', link: '/menu03'},
                         {no: 4, name: '계획', link: '/menu04'}]

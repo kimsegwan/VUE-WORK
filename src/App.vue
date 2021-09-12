@@ -3,7 +3,8 @@
     <div class="app-content">
       <Top v-on:menuText="menuText"/>
       <!-- <img src="./assets/logo.png"> -->
-      <router-view/>
+      <router-view>
+      </router-view>
     </div>
   </div>
 </template>
@@ -15,11 +16,11 @@ import Top from './components/Top.vue'
 import VueRouter from 'vue-router'
 
 var routes = [
-  {path: '/menu01', component: Tab01},
+  {path: '/', component: Tab01},
   {path: '/menu02', component: Tab02}
 ]
 
-var router = new VueRouter({
+const router = new VueRouter({
   mode: 'history',
   routes
 })
@@ -29,7 +30,7 @@ export default {
   router,
   data () {
     return {
-
+      
     }
   },
   methods: {
@@ -57,8 +58,9 @@ export default {
 
 #app::before {
   content: '';
+  /* background-image: url('./assets/tab02_back.jpg'); */
   background-image: url('./assets/main_back.jpg');
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
