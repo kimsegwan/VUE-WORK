@@ -3,8 +3,7 @@
     <div class="app-content">
       <Top v-on:menuText="menuText"/>
       <!-- <img src="./assets/logo.png"> -->
-      <router-view>
-      </router-view>
+      <router-view/>
     </div>
   </div>
 </template>
@@ -30,7 +29,7 @@ export default {
   router,
   data () {
     return {
-      
+      rootDataMain: 'dictoinary'
     }
   },
   methods: {

@@ -16,6 +16,9 @@
             </table>
         </div>
         <button @click="gogo()">눌러봐</button>
+        <transition name="fade" mode="out-in">
+            <p v-if="show">HELLO</p>
+        </transition>
     </div>
 </template>
 
@@ -26,10 +29,15 @@ export default ({
     name: 'Tab01',
     data() {
         return {
-            result: null
+            result: null,
+            show: true
         }
     },
     methods: {
+        gogo: function() {
+            //alert(this.$parent.rootDataMain)
+            this.show = !this.show
+        },
         getData: function() {
             axios.get('https://raw.githubusercontent.com/joshua1988/doit-vuejs/master/data/demo.json')
 							.then((response) => {
