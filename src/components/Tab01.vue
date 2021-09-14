@@ -62,10 +62,6 @@ export default ({
     margin: 0px auto;
 }
 
-.contents-img-box {
-    
-}
-
 .contents-img-box img {
     width:150px;
     height: 150px;
