@@ -1,11 +1,12 @@
 <template>
     <div class="contents-tab01">
-        Tab01
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <h1>소개</h1>
+        <div class="contents-img-box">
+            <div>
+                <img :src="require(`@/assets/logo.png`)" />
+            </div>
+            <div></div>
+        </div>
+
         <button @click="getData">데이터 수신</button>
         <div>
             <table>
@@ -15,10 +16,6 @@
                 </tr>
             </table>
         </div>
-        <button @click="gogo()">눌러봐</button>
-        <transition name="fade" mode="out-in">
-            <p v-if="show">HELLO</p>
-        </transition>
     </div>
 </template>
 
@@ -30,7 +27,8 @@ export default ({
     data() {
         return {
             result: null,
-            show: true
+            show: true,
+            text: ''
         }
     },
     methods: {
@@ -55,5 +53,21 @@ export default ({
 .contents-tab01 {
     padding: 10px;
     width: 100%;
+}
+
+.contents-html-box {
+    background-color: white;
+    height:300px;
+    width:250px;
+    margin: 0px auto;
+}
+
+.contents-img-box {
+    
+}
+
+.contents-img-box img {
+    width:150px;
+    height: 150px;
 }
 </style>

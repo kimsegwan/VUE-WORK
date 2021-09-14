@@ -5,6 +5,7 @@
       <!-- <img src="./assets/logo.png"> -->
       <router-view/>
     </div>
+    <Footer/>
   </div>
 </template>
 
@@ -12,6 +13,7 @@
 import Tab01 from './components/Tab01.vue'
 import Tab02 from './components/Tab02.vue'
 import Top from './components/Top.vue'
+import Footer from './components/Footer'
 import VueRouter from 'vue-router'
 
 var routes = [
@@ -38,7 +40,7 @@ export default {
     }
   },
   components: {
-    Tab01, Tab02, Top
+    Tab01, Tab02, Top, Footer
   }
 }
 </script>
@@ -55,7 +57,8 @@ export default {
   font-family: "맑은 고딕";
 }
 
-#app::before {
+/* #app::before { */
+.app-content {
   content: '';
   /* background-image: url('./assets/tab02_back.jpg'); */
   background-image: url('./assets/main_back.jpg');
