@@ -1,6 +1,14 @@
 <template>
   <div id="app">
     <div class="app-content">
+      <div class="main-top">
+        <div class="main-top-text">
+          <span class="main-top-text-01">JolTa</span>
+          <span class="main-top-text-02">
+            해당 홈페이지 방문을 환영합니다.
+          </span>
+        </div>
+      </div>
       <Top v-on:menuText="menuText"/>
       <!-- <img src="./assets/logo.png"> -->
       <router-view/>
@@ -57,6 +65,27 @@ export default {
   font-family: "맑은 고딕";
 }
 
+.main-top {
+  padding-top: 30px;
+}
+
+.main-top-text {
+  color: #111;
+}
+
+.main-top-text-01 {
+  font-size: 25px;
+  font-weight: bold;
+  display: block;
+}
+
+.main-top-text-02 {
+  padding: 20px 0px 20px 0px;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+}
+
 /* #app::before { */
 .app-content {
   content: '';
@@ -70,7 +99,7 @@ export default {
   position: absolute;
   left: 0px;
   top: 0px;
-  opacity: .7;
+  /* opacity: .7; */
 }
 
 .app-content{
